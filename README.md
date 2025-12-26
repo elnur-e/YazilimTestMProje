@@ -1,32 +1,50 @@
-# REST Assured API Test Project
 
-This project is an automated API testing project developed using Java, Maven, JUnit4 and REST Assured.
+---
+## Öğrenci Bilgisi
+Mıeraıhemaıtı Alınuer
+030121077
 
-## Technologies
-- Java
-- Maven
-- JUnit 4
-- REST Assured
+## 🧪 Gerçekleştirilen Test Senaryoları
 
-## Test Scenarios
-- GET request test with:
-    - Status code validation
-    - Response body validation
-    - Response time validation
+Projede iki adet otomatik test bulunmaktadır:
 
-- POST request test with JSON request body including:
-    - Status code validation
-    - Response body validation
-    - Response time validation
-  
+### 1️⃣ GET İsteği Testi
 
-## Logging & Performance Threshold
-- All requests and responses are logged using REST Assured `.log().all()`.
-- Response time is measured and must be under `MAX_RESPONSE_TIME` (e.g., 3000 ms).
-- Tests print a clear PASS/FAIL message to the console.
+Aşağıdaki kontroller yapılmaktadır:
+
+- HTTP **Status Code** kontrolü  
+- **Response Body** doğrulaması  
+- **Response süresi** kontrolü  
+
+### 2️⃣ JSON Gövdeli POST İsteği Testi
+
+Aşağıdaki kontroller yapılmaktadır:
+
+- HTTP **Status Code** kontrolü  
+- **Response Body** içeriğinin doğrulanması  
+- **Response süresi** kontrolü  
+
+Her iki testte de ayrıntılı **request & response logları** konsola yazdırılmaktadır.
+
+---
+
+## ⏱️ Loglama ve Performans Testi
+
+Tüm testlerde:
+
+- İstek ve cevaplar:
+  ```java
+  .log().all()
+komutu ile ayrıntılı şekilde loglanmaktadır.
+
+Her isteğin yanıt süresi ölçülmekte ve aşağıdaki sınırın altında olması beklenmektedir:
+
+MAX_RESPONSE_TIME = 3000 ms
 
 
-## How to Run Tests
 
-```bash
-mvn test
+## 🌐 Test Edilen Servis
+
+Projede test amaçlı geliştirilen aşağıdaki servis kullanılmıştır:
+
+https://httpbin.org
